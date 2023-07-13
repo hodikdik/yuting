@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>datayuting</title>
+
+    <!-- google-fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- //google-fonts -->
+
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="static/css/style-liberty.css">
+
+</head>
+
+<body>
+
+<!-- top header -->
+<section class="w3l-top-header">
+    <div class="container">
+        <div class="top-content-w3ls d-flex align-items-center justify-content-between">
+            <div class="top-headers">
+                <ul>
+                </ul>
+            </div>
+            <div class="top-headers top-headers-2">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //top header -->
+
+<!--header-->
+<header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg stroke">
+            <h1>
+                <a class="navbar-brand" href="index.html">
+                    <span class="fa fa-lightbulb"></span> 民族分析
+                </a>
+            </h1>
+            <!-- if logo is image enable this   
+            <a class="navbar-brand" href="#index.html">
+                <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+            </a> -->
+            <button class="navbar-toggler  collapsed bg-gradient" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">民族介绍 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="wordcloud.html">热门词云</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="emotionanalysis.html">情感分析</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            其他分析 <span class="fas fa-angle-down"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="type.html">聚类分析</a>
+                            <a class="dropdown-item" href="direction.html">趋势分析</a>
+                        </div>
+                    </li>
+
+                    <!--/search-right-->
+                    <ul class="header-search">
+                        <li class="nav-item search-right">
+                            <a href="#search" class="btn search-btn btn-light" title="search"><span class="fas fa-search" aria-hidden="true"></span></a>
+                            <!-- search popup -->
+                            <div id="search" class="pop-overlay">
+                                <div class="popup">
+                                    <h3 class="title-w3l two mb-4 text-left">Search Here</h3>
+                                    <form action="#" method="GET" class="search-box d-sm-flex position-relative">
+                                        <input type="search" placeholder="Enter Keyword here" name="search" required="required" autofocus="">
+                                        <button type="submit" class="btn btn-style btn-primary"> Search</button>
+                                    </form>
+                                </div>
+                                <a class="close" href="#close">×</a>
+                            </div>
+                            <!-- /search popup -->
+                        </li>
+                    </ul>
+                    <!--//search-right-->
+                </ul>
+            </div>
+            <!-- search button -->
+
+            <!-- //search button -->
+
+            <!-- toggle switch for light and dark theme -->
+            <div class="cont-ser-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container">
+                                <i class="gg-sun"></i>
+                                <i class="gg-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+            <!-- //toggle switch for light and dark theme -->
+        </nav>
+    </div>
+</header>
+<!--//header-->
+
+
+<!-- about banner -->
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+        <div class="container py-lg-5 py-md-4">
+            <div class="banner-info-grid px-md-5">
+                <h2 class="w3l-title-breadcrumb mb-3">热点趋势分析</h2>
+                <p class="inner-page-para px-lg-5"> 以关键词“藏族”检索6月热门词条数据，进行热点趋势分析。数据发现，近一个月藏族的话题讨论度主要集中在6月中旬，且达到两次峰值，与新闻媒体报道的藏族活动有关。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //about banner -->
+
+<div id="container" style="height: 600%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.2/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  xAxis: {
+    type: 'category',
+    boundaryGap: false
+  },
+  yAxis: {
+    type: 'value',
+    boundaryGap: [0, '30%']
+  },
+  visualMap: {
+    type: 'piecewise',
+    show: false,
+    dimension: 0,
+    seriesIndex: 0,
+    pieces: [
+      {
+        gt: 1,
+        lt: 3,
+        color: 'rgba(0, 0, 180, 0.4)'
+      },
+      {
+        gt: 5,
+        lt: 7,
+        color: 'rgba(0, 0, 180, 0.4)'
+      }
+    ]
+  },
+  series: [
+    {
+      type: 'line',
+      smooth: 0.6,
+      symbol: 'none',
+      lineStyle: {
+        color: '#5470C6',
+        width: 5
+      },
+      markLine: {
+        symbol: ['none', 'none'],
+        label: { show: false },
+        data: [{ xAxis: 1 }, { xAxis: 3 }, { xAxis: 5 }, { xAxis: 7 }]
+      },
+      areaStyle: {},
+      data: [
+        ['2023-6-6', 300],
+        ['2023-6-11', 460],
+        ['2023-6-12', 850],
+        ['2023-6-13', 480],
+        ['2023-6-14', 350],
+        ['2023-6-15', 200],
+        ['2023-6-16', 550],
+        ['2023-6-17', 400],
+        ['2023-6-18', 600]
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+
+
+<!-- footer block -->
+<footer class="w3l-footer-29-main">
+    <p class="copy-footer-29 text-center mt-5 pb-2">© 22301268 贺宇婷. </a></p>
+</footer>
+<!-- //footer block -->
+
+
+
+
+<!-- Js scripts -->
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+    <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<!-- //move top -->
+
+<!-- common jquery plugin -->
+<script src="static/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+
+<!-- theme switch js (light and dark)-->
+<script src="static/js/theme-change.js"></script>
+<!-- //theme switch js (light and dark)-->
+
+<!--/stats-number-counter-->
+<script src="static/js/jquery.waypoints.min.js"></script>
+<script src="static/js/jquery.countup.js"></script>
+<script>
+    $('.counter').countUp();
+
+</script>
+<!--//stats-number-counter-->
+
+<!--/owlcarousel-->
+<script src="static/js/owl.carousel.js"></script>
+<!-- //tesimonials-->
+<script>
+    $(document).ready(function() {
+        $("#owl-demo1").owlCarousel({
+            loop: true,
+            nav: false,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                736: {
+                    items: 1,
+                    nav: false
+                }
+            }
+        })
+    })
+
+</script>
+<!-- //tesimonials-->
+
+<!-- MENU-JS -->
+<script>
+    $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+</script>
+<!-- //MENU-JS -->
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            $('body').toggleClass('noscroll');
+        })
+    });
+</script>
+<!-- //disable body scroll which navbar is in active -->
+
+<!--bootstrap-->
+<script src="static/js/bootstrap.min.js"></script>
+<!-- //bootstrap-->
+<!-- //Js scripts -->
+
+</body>
+
+</html>
